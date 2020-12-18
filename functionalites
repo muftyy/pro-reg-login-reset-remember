@@ -1,0 +1,14 @@
+login/logout/authenticatin/authorization prepared statements
+register
+
+forgot-passoword
+user enters his email and a mail is sent to him together with a token
+
+reset-password
+when the user clicks the link sent to his email with the token, he is brough here
+this is where he enters his new password
+
+verify email
+when the user signs up, he has to be verified
+
+rememember me / keep me signed in
