@@ -1,20 +1,8 @@
-<?php
-	$empty;
-
-	function validate(){
-		//check for empty fields
-		if(isset($_POST['login'])){
-			if(empty($_POST['email']) or empty($_POST['password'])){
-				global $empty;
-				$empty = "Please enter all fields";
-				return;
-			}
-		}
-
-		//filters for email
-	}
-
-	validate();
+<?php declare(strict_types=1);
+	
+	if(isset($_POST['login'])){
+		require 'incs/login_validator.inc.php';
+	}	
 
 	
 ?>
@@ -23,8 +11,8 @@
 
 <section class="container grey-text">
 	<h4 class="center">Login</h4>
-	<article class="center red-text"><?php echo htmlspecialchars($empty ?? null); ?></article>
-	<form class="white" action="login.php" method="POST">
+	<article class="center red-text"><?php echo $error ?? null ?></article>
+	<form class="white" action="login" method="POST">
 		<label>Email</label>
 		<input type="text" name="email">
 
