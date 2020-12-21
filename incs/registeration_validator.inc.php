@@ -1,7 +1,7 @@
 <?php 
-	// $errors = array('empty' => '',  );
 
-	require "class/RegisterationValidator.class.php";
+	include 'autoloader.inc.php';
+
 	$registerationValidator = new RegisterationValidator($_POST);
 
 	$errors = $registerationValidator->validateForm();

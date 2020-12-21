@@ -1,7 +1,7 @@
 <?php 
 
+	include 'autoloader.inc.php';
 
-	require "class/LoginValidator.class.php";
 	$loginValidator = new LoginValidator($_POST);
 
 	$errors = $loginValidator->validateForm();
