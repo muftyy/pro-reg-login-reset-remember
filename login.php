@@ -11,10 +11,10 @@
 
 <section class="container grey-text">
 	<h4 class="center">Login</h4>
-	<article class="center red-text"><?php echo $error ?? null ?></article>
+	<article class="center red-text"><?php echo $errors['system'] ?? $errors['empty'] ?? '' ?></article>
 	<form class="white" action="login" method="POST">
-		<label>Email</label>
-		<input type="text" name="email">
+		<label>Username or Email</label>
+		<input type="text" name="username_or_email" value="<?php echo htmlspecialchars($data['username_or_email'] ?? '') ?>">
 
 		<label>Password</label>
 		<input type="password" name="password">

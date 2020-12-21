@@ -2,9 +2,12 @@
 
 //trim, sanitize, is_num, etc
 interface RegisterationMethods{
-	// public function isEmpty();
-	// public function passwordsMatch();
-	// public function emailExists();
+	// private function addError();
+	public function getData();
+	public function validateForm();
+	public function validateUsername();
+	public function validateEmail();
+	public function validatePassword();
 }
 
 
@@ -46,13 +49,13 @@ class RegisterationValidator implements RegisterationMethods{
 		return $this->errors;
 	}
 
-	// check if username oe email already exist
+	// check if username or email already exists in database
 	// store data in database
 	public function database(){
 
 	}
 
-	
+	/*Pre-database validation*/
 	public function isEmpty() : bool{
 		return (empty(trim($this->data['username'])) 
 			or empty(trim($this->data['email'])) 
@@ -81,33 +84,14 @@ class RegisterationValidator implements RegisterationMethods{
 		}
 	}
 
-	// /**
-	// * checks if email already exisits in the database
-	// * if it does, we prompt the user to use a different email
-	// */
-	// public function emailExists() : bool{
-	// 	$email = $_POST['email'];
+	/*Post-database validation*/
+	public function usernameExists(){
 
-	// 	if($email == "test@test.com"){
-	// 		return true;
-	// 	}
+	}
 
-	// 	return false;
-	// }
-
-	// /**
-	// * check if both password fields match
-	// *
-	// */
-	// public function passwordsMatch() : bool {
-	// 	return $_POST['password'] === $_POST['password_repeat'];
-	// }
-
-	
-
-	// public function toLogin(){
-	// 	//redirect to login pages with a  successful message
-	// }
+	public function emailExists(){
+		
+	}
 }
 
 

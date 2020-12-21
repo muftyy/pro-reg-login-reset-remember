@@ -1,20 +1,15 @@
 <?php 
 
+
 	require "class/LoginValidator.class.php";
-	$loginValidator = new LoginValidator();
+	$loginValidator = new LoginValidator($_POST);
 
-	if($loginValidator->isEmpty()){
-		$error = "Please fill all fields";
-	}
+	$errors = $loginValidator->validateForm();
+	$data = $loginValidator->getData();
 
-	else if($loginValidator->isInDatabase()){
-		//set session, redirect to dashboard
-		// $loginValidator->toDashboard();
-		$error = "yayyyy you are logged in";
-	}
-
-	else{
-		$error = "invalid email or password";
+	if(!array_filter($errors)){
+		// $registerationValidator->database()
+		echo "yayyyy you can move on to the database operations";
 	}
 
 ?>
